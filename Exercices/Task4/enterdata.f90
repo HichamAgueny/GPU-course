@@ -33,6 +33,8 @@
         write(*,*)'--sum before loop:', sum(f(:,:))
 
 !offload data to the device
+      do iter=1,5
+
          do j=1,ny
             do i=1,nx
 
@@ -49,10 +51,9 @@
 
              enddo
           enddo
-
-         write(*,*)'--sum:within the region', sum(f0(:,:))
-
-       write(*,*)'--sum after end data fk,f:', sum(f_k(:,:)),sum(f(:,:))
+       enddo
+ 
+       write(*,*)'--sum after end data fk:', sum(f_k(:,:))
        write(*,*)'--sum after end data f0:',sum(f0(:,:)) 
 
        call system_clock(t_final)

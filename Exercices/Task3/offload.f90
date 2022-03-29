@@ -21,11 +21,10 @@
 
        call system_clock(t_start)
      
-       print*, "--Start the iteration"
-
         write(*,*)'--sum before loop:', sum(f(:,:))/(nx*ny)
 
 !offload the data to the device and copy the result back to the host
+      do iter=1,5
 
          do j=1,ny
             do i=1,nx
@@ -42,7 +41,8 @@
 
           f_k = f_k/2.
 !copy from the host to device
-       
+       enddo
+
        write(*,*)'--sum after end data:', sum(f_k(:,:))/(nx*ny)
        call system_clock(t_final)
 

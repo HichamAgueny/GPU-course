@@ -1,1 +1,1 @@
-nvfortran -fast -acc -Minfo=accel -o loop loop.f90
+nvfortran -fast -acc -Minfo=accel -o laplace_acc laplace_acc.f90

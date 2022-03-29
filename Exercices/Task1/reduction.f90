@@ -37,7 +37,6 @@
              enddo
           enddo
 
-
           write(*,*)'--max:', max_err 
 
 !parallelise the loop and compute the sum using an openacc directive
